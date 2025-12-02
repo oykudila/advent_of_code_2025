@@ -11,12 +11,8 @@ dial is at 99: 99 -> R1 -> 0
 
 Dial starts at 50
 
-The safe is a decoy, the actual password is the *number of times the dial points at 0 after any rotation in the sequence*
-
 50 -> R60 -> 11
 
-50 + 60 = 110 
-110 
 
 
 L50
@@ -31,3 +27,26 @@ R23
 L26
 R13
 R3
+
+
+For L:
+1 -> L >=1 -> 0
+2 -> L >=2 -> 0
+3 -> L >=3 -> 0
+.
+.
+.
+97 -> L >=97 -> 0
+98 -> L >=98 -> 0
+99 -> L >=99 -> 0
+
+For R:
+1 -> R >=99 -> 0
+2 -> R >=98 -> 0
+3 -> R >=97 -> 0
+.
+.
+.
+97 -> R >=3 -> 0
+98 -> R >=2 -> 0
+99 -> R >=1 -> 0

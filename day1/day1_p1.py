@@ -3,6 +3,23 @@ def main():
     print("Done")
 
 
+def find_zeros(dial_pos, distance, direction):
+    N = 100
+
+    if direction == "R":
+        offset = (-dial_pos) % N
+        if offset == 0:
+            offset = N
+    else:
+        offset = dial_pos % N
+        if offset == 0:
+            offset = N
+    if distance < offset:
+        return 0
+    
+    return 1 + (distance - offset) // N
+
+
 def dial():
     dial_pos = 50
     password = 0
@@ -15,17 +32,14 @@ def dial():
     for line in lines:
         direction = line[0]
         distance = int(line[1:])
+
+        password += find_zeros(dial_pos, distance, direction)
+
         if direction == "R":
             dial_pos = (dial_pos + distance) % 100
-            # print(f"New dial position: {dial_pos}")
-        elif direction == "L":
+        else:
             dial_pos = (dial_pos - distance) % 100
-            # print(f"New dial position: {dial_pos}")
-        if dial_pos == 0:
-            password += 1
-            print(f"Dial hit 0! Current password count: {password}")
-
-    print(f"Password is: {password}")
+    return print("Final password:", password)
 
 
 if __name__ == "__main__":
