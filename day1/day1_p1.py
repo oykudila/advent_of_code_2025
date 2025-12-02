@@ -14,15 +14,13 @@ def dial():
     print("Dialing...")
     for line in lines:
         direction = line[0]
-        print(f"Direction: {direction}")
         distance = int(line[1:])
-        print(f"Distance: {distance}")
         if direction == "R":
             dial_pos = (dial_pos + distance) % 100
-            print(f"New dial position: {dial_pos}")
+            # print(f"New dial position: {dial_pos}")
         elif direction == "L":
             dial_pos = (dial_pos - distance) % 100
-            print(f"New dial position: {dial_pos}")
+            # print(f"New dial position: {dial_pos}")
         if dial_pos == 0:
             password += 1
             print(f"Dial hit 0! Current password count: {password}")
