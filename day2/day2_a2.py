@@ -1,3 +1,6 @@
+import re
+
+
 def main():
     helping_elves()
 
@@ -14,11 +17,11 @@ def helping_elves():
         id_ranges = list(range(int_list[0], int_list[1] + 1))
         str_ranges = list(map(str, id_ranges))
         for id in str_ranges:
-            s2, s3 = id[: len(id) // 2 + len(id) % 2], id[len(id) // 2 + len(id) % 2 :]
-            if s2 == s3:
+            if re.match(r"^(\d+)\1+$", id):
                 duplicates.append(id)
+
     duplicate_ints = list(map(int, duplicates))
-    print("Answer 1:", sum(duplicate_ints))
+    print("Answer 2:", sum(duplicate_ints))
 
 
 if __name__ == "__main__":
