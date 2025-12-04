@@ -1,8 +1,3 @@
-def main():
-    dial()
-    print("Done")
-
-
 def find_zeros(dial_pos, distance, direction):
     N = 100
 
@@ -16,7 +11,7 @@ def find_zeros(dial_pos, distance, direction):
             offset = N
     if distance < offset:
         return 0
-    
+
     return 1 + (distance - offset) // N
 
 
@@ -43,4 +38,4 @@ def dial():
 
 
 if __name__ == "__main__":
-    main()
+    dial()

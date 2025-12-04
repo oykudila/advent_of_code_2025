@@ -1,7 +1,3 @@
-def main():
-    helping_elves()
-
-
 def helping_elves():
     duplicates = []
 
@@ -24,4 +20,4 @@ def helping_elves():
 
 
 if __name__ == "__main__":
-    main()
+    helping_elves()

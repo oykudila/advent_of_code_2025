@@ -18,7 +18,6 @@ def finding_banks():
         lines = file.readlines()
         batteries = []
         for line in lines:
-
             banks = list(str(line).strip())
 
             first_digit, f_index = find_first_digit(banks)
